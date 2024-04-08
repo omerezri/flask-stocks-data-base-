@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+</head>
+<body>
+    <h1>Stored Stock Information</h1>
+    <ul>
+        {% for stock in stocks %}
+            <li>{{ stock[1] }} - {{ stock[2] }}</li>
+        {% endfor %}
+    </ul>
+    <form action="/fetch_stock" method="post">
+        <label for="symbol">Enter Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <button type="submit">get me rich</button>
+    </form>
+</body>
+</html>
